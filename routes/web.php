@@ -14,3 +14,7 @@ Route::get('/newpage2', function (Illuminate\Http\Request $request) {
     $inputText = $request->query('inputText');
     return view('newpage2', ['inputText' => $inputText]);
 });
+
+Route::get('/api/greet', function () {
+    return response()->json(['message' => "hello world"]);
+});

@@ -7,13 +7,13 @@
     <title>Laravel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
     <div class="container">
         <div class="row">
-            <div class=" col-md-12 mt-2">
+            <div class="col-md-12 mt-2">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">Navbar</a>
@@ -80,7 +80,7 @@
                         <h5 class="card-title">Special title treatment</h5>
                         <form action="{{ url('/newpage2')}}" method="GET">
                             <input type="text" name="inputText" class="form-control mb-2" placeholder="Enter your name">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Go somewhere</button>
                         </form>
                     </div>
                 </div>
@@ -93,7 +93,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Special title treatment</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <button id="apiButton" class="btn btn-primary">Call API</button>
+                        <p id="apiResponse" class="mt-2"></p>
                     </div>
                 </div>
             </div>
@@ -110,6 +111,21 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#apiButton').click(function () {
+                $.ajax({
+                    url: '/api/greet',
+                    method: 'GET',
+                    success: function (response) {
+                        $('#apiResponse').text(response.message);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
