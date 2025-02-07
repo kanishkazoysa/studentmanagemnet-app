@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,5 @@ Route::get('/db-test', function () {
         return 'Could not connect to the database. Please check your configuration. Error: ' . $e->getMessage();
     }
 });
+
+Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
