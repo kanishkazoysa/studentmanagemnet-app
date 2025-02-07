@@ -30,4 +30,13 @@ class UserController extends Controller
 
         return redirect()->back()->with('success', 'User registered successfully!');
     }
+
+    public function index()
+    {
+        // Retrieve all users from the database
+        $users = User::all();
+
+        // Pass the users to the view
+        return view('allUsers', ['users' => $users]);
+    }
 }

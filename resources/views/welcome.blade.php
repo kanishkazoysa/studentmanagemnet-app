@@ -65,9 +65,9 @@
                         Featured
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
+                        <h5 class="card-title">Register as New User</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="{{ url('/newpage')}}" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url('/newpage')}}" class="btn btn-primary">Go to Register Page</a>
                     </div>
                 </div>
             </div>
@@ -77,11 +77,8 @@
                         Featured
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <form action="{{ url('/newpage2')}}" method="GET">
-                            <input type="text" name="inputText" class="form-control mb-2" placeholder="Enter your name">
-                            <button type="submit" class="btn btn-primary">Go somewhere</button>
-                        </form>
+                        <h5 class="card-title">Log in to the system</h5>
+                        <button type="submit" class="btn btn-primary">Go to Login Page</button>
                     </div>
                 </div>
             </div>
@@ -91,10 +88,9 @@
                         Featured
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
+                        <h5 class="card-title">Registered Users</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <button id="apiButton" class="btn btn-primary">Call API</button>
-                        <p id="apiResponse" class="mt-2"></p>
+                        <a href="{{ route('all.users') }}" class="btn btn-primary">View all users</a>
                     </div>
                 </div>
             </div>

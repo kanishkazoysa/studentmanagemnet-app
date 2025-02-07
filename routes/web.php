@@ -16,6 +16,10 @@ Route::get('/newpage2', function (Illuminate\Http\Request $request) {
     return view('newpage2', ['inputText' => $inputText]);
 });
 
+Route::get('/allUsers', function () {
+    return view('allUsers');
+});
+
 Route::get('/api/greet', function () {
     return response()->json(['message' => "hello world"]);
 });
@@ -30,3 +34,5 @@ Route::get('/db-test', function () {
 });
 
 Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+
+Route::get('/all-users', [UserController::class, 'index'])->name('all.users');
